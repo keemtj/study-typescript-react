@@ -1,5 +1,6 @@
 import React from 'react';
 
+// props 받아올 떄
 type GreetingsProps = {
   name: string;
   mark: string;
@@ -24,6 +25,7 @@ function Greetings({name, mark, optional, onClick, children}: GreetingsProps) {
     );
 }
 
+// props의 default값 설정할 때
 Greetings.defaultProps = {
   mark: '!',
 }
