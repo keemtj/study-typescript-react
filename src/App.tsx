@@ -1,7 +1,7 @@
 import React from 'react';
-// import Counter from './Counter';
+import Counter from './Counter';
 // import Greetings from './Greetings';
-import MyForm from './MyForm';
+// import MyForm from './MyForm';
 
 const App: React.FC = () => {
   // const onClick = (name:string) => {
@@ -10,12 +10,12 @@ const App: React.FC = () => {
   // return (
   //   <Greetings name="타입스크립트" onClick={onClick}/>
   // );
-  // return <Counter />
+  return <Counter />
 
-  const onSubmit = (form: {name: string; description: string }) => {
-    console.log(form);
-  }
-  return <MyForm onSubmit={onSubmit}/>
+  // const onSubmit = (form: {name: string; description: string }) => {
+  //   console.log(form);
+  // }
+  // return <MyForm onSubmit={onSubmit}/>
 }
 
 export default App;

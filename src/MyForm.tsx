@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 
 type MyFormProps = {
   // void: 해당 함수에서 아무것도 반환하지 않는다는 뜻
+  // onSubmit: (form: Params) => void;
   onSubmit: (form: { name: string; description: string; }) => void;
 }
 
