@@ -1,4 +1,5 @@
 import React from 'react';
+import CounterContainer from './Containers/CounterContainer';
 import ReducerSample from './ReducerSample';
 import { SampleProvider } from './SampleContext';
 // import Counter from './Counter';
@@ -19,11 +20,12 @@ const App: React.FC = () => {
   // }
   // return <MyForm onSubmit={onSubmit}/>
 
-  return (
-    <SampleProvider>
-      <ReducerSample />
-    </SampleProvider>
-  );
+  // return (
+  //   <SampleProvider>
+  //     <ReducerSample />
+  //   </SampleProvider>
+  // );
+  return <CounterContainer />;
 }
 
 export default App;
