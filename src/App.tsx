@@ -1,7 +1,7 @@
 import React from 'react';
 import CounterContainer from './Containers/CounterContainer';
-import ReducerSample from './ReducerSample';
-import { SampleProvider } from './SampleContext';
+// import ReducerSample from './ReducerSample';
+// import { SampleProvider } from './SampleContext';
 // import Counter from './Counter';
 // import Greetings from './Greetings';
 // import MyForm from './MyForm';
@@ -25,6 +25,7 @@ const App: React.FC = () => {
   //     <ReducerSample />
   //   </SampleProvider>
   // );
+  
   return <CounterContainer />;
 }
 
