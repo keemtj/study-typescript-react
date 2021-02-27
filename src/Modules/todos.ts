@@ -1,4 +1,4 @@
-import { action, ActionType, createReducer, deprecated } from 'typesafe-actions';
+import { ActionType, createReducer, deprecated } from 'typesafe-actions';
 const { createStandardAction } = deprecated;
 
 const ADD_TODO = 'todos/Add_TODO' as const;
