@@ -1,6 +1,7 @@
 import React from 'react';
+import GithubProfileLoader from './Containers/GithubProfileLoader';
 // import CounterContainer from './Containers/CounterContainer';
-import TodoApp from './Containers/TodoApp';
+// import TodoApp from './Containers/TodoApp';
 // import CounterContainer from './Containers/CounterContainer';
 // import ReducerSample from './ReducerSample';
 // import { SampleProvider } from './SampleContext';
@@ -30,8 +31,9 @@ const App: React.FC = () => {
 
   // return <CounterContainer />;
   
-  return <TodoApp />;
+  // return <TodoApp />;
   // return <CounterContainer />;
+  return <GithubProfileLoader />
 }
 
 export default App;
