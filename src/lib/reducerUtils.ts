@@ -1,3 +1,7 @@
+import { stat } from "fs";
+import { getType } from "typesafe-actions";
+import { AnyAsyncActionCreator } from "./creatAsyncThunk";
+
 export type AsyncState<T, E = any> = {
   loading: boolean;
   data: T | null;
@@ -25,4 +29,38 @@ export const asyncState = {
     data: null,
     error,
   }),
+};
+
+export function createAsyncReducer<
+  S,
+  AC extends AnyAsyncActionCreator,
+  K extends keyof S
+>(asyncActionCreator: AC, key: K) {
+  return (state: S, action: any) => {
+    const [request, success, failure] = [
+      asyncActionCreator.request,
+      asyncActionCreator.success,
+      asyncActionCreator.failure
+    ].map(getType);
+
+    switch (action.type) {
+      case request:
+        return {
+          ...state,
+          [key]: asyncState.load(),
+        };
+      case success:
+        return {
+          ...state,
+          [key]: asyncState.success(action.payload),
+        };
+      case failure:
+        return {
+          ...state,
+          [key]: asyncState.error(action.payload),
+        };
+      default:
+        return state;
+    }
+  };
 };

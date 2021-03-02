@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux';
 import { AsyncActionCreatorBuilder } from 'typesafe-actions';
 
-type AnyAsyncActionCreator = AsyncActionCreatorBuilder<any, any, any>;
+export type AnyAsyncActionCreator = AsyncActionCreatorBuilder<any, any, any>;
 type AnyProimseCreator = (...params: any[]) => Promise<any>;
 
 export default function createAsyncThunk<
