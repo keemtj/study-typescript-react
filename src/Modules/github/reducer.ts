@@ -1,5 +1,5 @@
 import { createReducer } from 'typesafe-actions';
-import { asyncState, createAsyncReducer } from '../../lib/reducerUtils';
+import { asyncState, createAsyncReducer, transformToArray } from '../../lib/reducerUtils';
 // import { GET_USER_PROFILE, GET_USER_PROFILE_ERROR, GET_USER_PROFILE_SUCCESS } from './actions';
 import { getUserProfileAsync } from './actions';
 import { GithubAction, GithubState } from './types';
@@ -48,11 +48,12 @@ const initialState: GithubState = {
 
 const github = createReducer<GithubState, GithubAction>(initialState)
   .handleAction(
-    [
-    getUserProfileAsync.request,
-    getUserProfileAsync.success,
-    getUserProfileAsync.failure
-    ],
+    // [
+    // getUserProfileAsync.request,
+    // getUserProfileAsync.success,
+    // getUserProfileAsync.failure
+    // ],
+    transformToArray(getUserProfileAsync),
     createAsyncReducer(getUserProfileAsync, 'userProfile'));
 
 export default github;
